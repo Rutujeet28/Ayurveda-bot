@@ -1,0 +1,73 @@
+import Link from "next/link";
+
+interface ProdCardProps {
+  name: string;
+  image: string;
+  category: string;
+  use: string;
+  feature: string;
+  description: string;
+  href?: string; // New prop for the target page
+}
+
+export default function ProdCard({
+  name,
+  image,
+  category,
+  use,
+  feature,
+  description,
+  href,
+}: ProdCardProps) {
+  const cardContent = (
+    <div className="group [perspective:1000px] w-full h-64 cursor-pointer">
+      <div
+        className="
+          relative h-full w-full text-center transition-all duration-700 
+          [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]
+        "
+      >
+        {/* FRONT SIDE */}
+        <div
+          className="
+            absolute inset-0 bg-white border rounded-xl shadow-md p-4 
+            flex flex-col items-center justify-center 
+            [backface-visibility:hidden]
+          "
+        >
+          <img src={image} alt={name} className="w-20 h-20 object-contain mb-3" />
+          <h2 className="text-lg font-semibold text-gray-900">{name}</h2>
+        </div>
+
+        {/* BACK SIDE */}
+        <div
+          className="
+            absolute inset-0 bg-teal-100 border rounded-xl shadow-md p-4 
+            [transform:rotateY(180deg)] [backface-visibility:hidden]
+            flex flex-col items-start justify-center text-left
+          "
+        >
+          <p>
+            <span className="font-semibold text-black">Category:</span>{" "}
+            <span className="text-black">{category}</span>
+          </p>
+
+          <p>
+            <span className="font-semibold text-black">Use:</span>{" "}
+            <span className="text-black">{use}</span>
+          </p>
+
+          <p>
+            <span className="font-semibold text-black">Main Feature:</span>{" "}
+            <span className="text-black">{feature}</span>
+          </p>
+
+          <p className="text-sm mt-2 text-black">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Wrap in Link if href is provided
+  return href ? <Link href={href}>{cardContent}</Link> : cardContent;
+}

@@ -1,27 +1,26 @@
 export default function Hero() {
   return (
     <section
-      className="relative w-full h-[50vh] flex flex-col items-center justify-center bg-cover bg-center text-white overflow-hidden"
+      className="relative w-full h-[70vh] flex flex-col items-center justify-center bg-cover bg-center text-white overflow-hidden"
       style={{ backgroundImage: "url('/hero-bg.jpg')" }}
     >
-      <div className="absolute inset-0 bg-black/10"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
 
-      {/* Benzene */}
-      <div className="absolute top-[12%] left-[72%] travel-random-1 opacity-80">
+      {/* ===== FLOATING SHAPES (no change, but animations improved) ===== */}
+      <div className="absolute top-[12%] left-[72%] animate-float-slow opacity-70">
         <svg width="80" height="80" viewBox="0 0 100 100" stroke="white" fill="none" strokeWidth="3">
           <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" />
         </svg>
       </div>
 
-      {/* Cyclohexane */}
-      <div className="absolute top-[45%] left-[8%] travel-random-2 opacity-75">
+      <div className="absolute top-[45%] left-[8%] animate-float opacity-70">
         <svg width="90" height="90" viewBox="0 0 100 100" stroke="white" fill="none" strokeWidth="3">
           <polygon points="30,20 70,20 90,50 70,80 30,80 10,50" />
         </svg>
       </div>
 
-      {/* Ethane */}
-      <div className="absolute top-[28%] left-[62%] travel-random-3 opacity-85">
+      <div className="absolute top-[28%] left-[62%] animate-float-fast opacity-75">
         <svg width="110" height="40" viewBox="0 0 150 60" stroke="white" fill="none" strokeWidth="3">
           <circle cx="30" cy="30" r="10" />
           <circle cx="120" cy="30" r="10" />
@@ -29,64 +28,44 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Isopropyl alcohol */}
-      <div className="absolute top-[18%] left-[22%] travel-random-1 opacity-80">
-        <svg width="150" height="90" viewBox="0 0 200 120" stroke="white" fill="none" strokeWidth="3">
-          <circle cx="50" cy="60" r="10" />
-          <circle cx="100" cy="60" r="10" />
-          <circle cx="150" cy="60" r="10" />
-          <circle cx="170" cy="40" r="8" />
-          <line x1="60" y1="60" x2="90" y2="60" />
-          <line x1="110" y1="60" x2="140" y2="60" />
-          <line x1="150" y1="60" x2="165" y2="45" />
-        </svg>
-      </div>
-
-      {/* Methane */}
-      <div className="absolute bottom-[12%] left-[55%] travel-random-2 opacity-70">
-        <svg width="90" height="90" viewBox="0 0 100 100" stroke="white" fill="none" strokeWidth="3">
-          <circle cx="50" cy="50" r="10" />
-          <circle cx="50" cy="15" r="6" />
-          <circle cx="85" cy="50" r="6" />
-          <circle cx="50" cy="85" r="6" />
-          <circle cx="15" cy="50" r="6" />
-          <line x1="50" y1="25" x2="50" y2="40" />
-          <line x1="65" y1="50" x2="60" y2="50" />
-          <line x1="50" y1="60" x2="50" y2="75" />
-          <line x1="40" y1="50" x2="25" y2="50" />
-        </svg>
-      </div>
-
-      {/* Atom cluster */}
-      <div className="absolute bottom-[22%] left-[18%] travel-random-3 opacity-60">
-        <svg width="80" height="50" viewBox="0 0 100 60" stroke="white" fill="none" strokeWidth="3">
-          <circle cx="20" cy="30" r="8" />
-          <circle cx="50" cy="15" r="8" />
-          <circle cx="80" cy="30" r="8" />
-          <line x1="28" y1="30" x2="42" y2="20" />
-          <line x1="58" y1="20" x2="72" y2="30" />
-        </svg>
-      </div>
-
-      {/* Main Content */}
-      <h1 className="text-5xl font-extrabold mb-4 text-center relative z-10">
-        Welcome to Your Next.js Project 🚀
+      {/* ===== MAIN TITLE ===== */}
+      <h1
+        className="
+        text-5xl md:text-6xl font-extrabold text-center relative z-10
+        bg-clip-text text-transparent 
+        bg-gradient-to-r from-blue-300 via-cyan-200 to-teal-300
+        drop-shadow-[0_0_25px_rgba(0,255,255,0.5)]
+        animate-fade-in
+      "
+      >
+        Elevate Your Next.js Experience ✨
       </h1>
 
-      <p className="text-lg max-w-xl text-center text-gray-200 relative z-10 mb-6">
-        Multi-directional floating molecular structures in the hero section.
+      {/* ===== SUBTITLE WITH GLASS BACKGROUND ===== */}
+      <p
+        className="
+        text-lg md:text-xl text-center max-w-2xl mt-4 relative z-10 
+        text-white/95 animate-slide-up
+        px-6 py-3 rounded-xl backdrop-blur-md 
+        bg-white/10 border border-white/20 
+        shadow-lg shadow-cyan-300/20
+      "
+      >
+        Beautiful animated molecular structures with modern text effects and smooth transitions.
       </p>
 
-      {/* Search Input */}
-      <div className="relative w-full max-w-md mx-auto relative z-10">
+      {/* ===== SEARCH BAR ===== */}
+      <div className="relative w-full max-w-md mx-auto mt-8 animate-slide-up z-10">
         <input
           type="text"
           placeholder="Search..."
-          className="w-full pl-10 pr-4 py-3 rounded-full bg-white/90 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full pl-12 pr-4 py-3 rounded-full 
+          bg-white/90 text-black placeholder-gray-500
+          shadow-xl backdrop-blur
+          focus:outline-none focus:ring-2 focus:ring-cyan-300"
         />
-        {/* Search Icon */}
         <svg
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500"
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
