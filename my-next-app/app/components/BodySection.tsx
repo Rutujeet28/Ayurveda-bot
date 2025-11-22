@@ -19,11 +19,10 @@ export default function BodySection() {
           style={{ color: "#000006" }}
         >
           <h2 className="text-3xl font-bold mb-4">
-            Main Content
+            Healing made Easy through Medicinal Research and AI
           </h2>
           <h2 className="text-lg leading-relaxed">
-            This is the body section of your home page.  
-            The background images fill the entire section, while the content stays centered.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae vel exercitationem voluptas voluptate sunt similique tempore repudiandae modi obcaecati? Atque autem, aut quod quaerat ea nam facere voluptatum id iure!
           </h2>
         </div>
       </div>

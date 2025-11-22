@@ -62,7 +62,7 @@ export default function RightSidebar({ isOpen, onToggle }: RightSidebarProps) {
 
         <img
           src="/chatbot.png"
-          alt="Chatbot" 
+          alt="Chatbot"
           className={`
             w-16 h-16 cursor-pointer
             transition-transform duration-300
@@ -74,16 +74,17 @@ export default function RightSidebar({ isOpen, onToggle }: RightSidebarProps) {
       </div>
 
       {/* === Sidebar Always Between Nav & Footer === */}
-            <aside
+      <aside
         className={`
-          fixed right-0 z-40 w-80 bg-gray-100 border-l shadow-lg
-          transform transition-transform duration-300
-          top-[var(--nav-height)]
-          bottom-[var(--footer-height)]
-          ${isOpen ? "translate-x-0" : "translate-x-full"}
+           fixed right-0 z-40 w-80 bg-gray-100 
+            border-l-4 border-gray-800  /* ⬅ added bold dark border */
+            shadow-lg
+            transform transition-transform duration-300
+            top-[var(--nav-height)]
+            bottom-[var(--footer-height)]
+            ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
-
         <div className="flex flex-col h-full p-4 text-black">
           <h2 className="font-bold text-lg mb-2">Chat</h2>
 
@@ -121,15 +122,13 @@ export default function RightSidebar({ isOpen, onToggle }: RightSidebarProps) {
             {messages.map((msg) => (
               <div
                 key={msg.id}
-                className={`flex flex-col ${
-                  msg.sender === "user" ? "items-start" : "items-end"
-                }`}
+                className={`flex flex-col ${msg.sender === "user" ? "items-start" : "items-end"}`}
               >
                 <span className="text-xs text-gray-500">{msg.name}</span>
 
                 <div
                   className={`
-                    px-3 py-2 rounded-lg max-w-[80%]
+                    px-3 py-2 rounded-lg max-w-[80%] border-2 border-gray-500 shadow-inner
                     ${msg.sender === "user"
                       ? "bg-blue-100 rounded-tl-none"
                       : "bg-green-200 rounded-tr-none"

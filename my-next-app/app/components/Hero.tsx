@@ -38,8 +38,17 @@ export default function Hero() {
         animate-fade-in
       "
       >
-        Elevate Your Next.js Experience ✨
+      Medicine and Healing 
       </h1>
+
+      <h1 className=" text-yellow-400 text-6xl md:text-7xl font-extrabold mt-2 animate-pulse
+       text-5xl md:text-6xl font-extrabold text-center relative z-10
+        bg-clip-text
+        bg-gradient-to-r from-blue-300 via-yellow-200 to-yellow-300
+        drop-shadow-[0_0_25px_rgba(0,255,255,0.5)]
+        animate-fade-in
+      ">✨</h1>
+      <br />
 
       {/* ===== SUBTITLE WITH GLASS BACKGROUND ===== */}
       <p
@@ -51,7 +60,7 @@ export default function Hero() {
         shadow-lg shadow-cyan-300/20
       "
       >
-        Beautiful animated molecular structures with modern text effects and smooth transitions.
+        Type in the for the medicine or ingredients looking for and get detailed information about them.
       </p>
 
       {/* ===== SEARCH BAR ===== */}
